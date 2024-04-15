@@ -5,6 +5,7 @@ You need to have Selenium, to install it do:
 
 pip install Selenium
 
+
 There is the documentation: https://selenium-python.readthedocs.io
 
 I am in no way responsible for what you do with it, I created this tool for purely educational purposes
