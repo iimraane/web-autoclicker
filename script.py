@@ -7,6 +7,12 @@ import time
 import emoji
 from selenium.webdriver.common.keys import Keys
 
+def element_interactable(element):
+    try:
+        return element.is_enabled() and element.is_displayed()
+    except:
+        return False
+
 # Initialisation du pilote Chrome
 driver = webdriver.Chrome()
 driver.get("https://www.instagram.com/")
@@ -40,6 +46,8 @@ driver.execute_script(scroll_script)
 time.sleep(5)
 
 text_zone = driver.find_element(By.CSS_SELECTOR, "textarea.x1i0vuye")
+wait = WebDriverWait(driver, 10)
+text_zone = wait.until(element_interactable(text_zone))
 
 mot =[]
 
