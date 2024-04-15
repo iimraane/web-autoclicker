@@ -4,6 +4,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import random
 import time
+import emoji
+from selenium.webdriver.common.keys import Keys
 
 # Initialisation du pilote Chrome
 driver = webdriver.Chrome()
@@ -35,22 +37,27 @@ driver.get(url_du_post)
 # Exécuter le script JavaScript pour faire défiler la page
 driver.execute_script(scroll_script)
 
-# Attendre que le bouton de commentaire soit visible et cliquable
-comment_button = driver.find_element(By.CLASS_NAME, "x1i10hfl")
-comment_button.click()
+time.sleep(5)
 
-text_zone = driver.find_element(By.XPATH, "//textarea[@aria-label='Ajouter un commentaire...']")
+text_zone = driver.find_element(By.CSS_SELECTOR, "textarea.x1i0vuye")
 
+mot =[]
+
+while True:
 # Générer un mot aléatoire
-letters = 'abcdefghijklmnopqrstuvwxyz'
-mot = ''.join(random.choices(letters, k=8))
+    letters = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '^', '_', '`', '{', '|', '}', '~', 'a', 'b', 'c', 'd', 'e', 'f,' 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ]
+    mot = ''.join(random.choices(letters, k=12))
 
-# Saisir le mot généré dans la zone de texte
-text_zone.send_keys(mot)
+    time.sleep(3.5)
 
-# Attendre un court instant avant de cliquer sur le bouton "Post"
-time.sleep(2)
+    # Saisir le mot généré dans la zone de texte
+    text_zone.send_keys(mot, Keys.RETURN)
 
-# Cliquer sur le bouton "Post"
-post_button = driver.find_element(By.XPATH, "//button[contains(text(),'Post')]")
-post_button.click()
+    # Attendre que le bouton de publication soit visible et cliquable
+    # publish_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//div[contains(text(), 'Publier')]")))
+    # publish_button.click()
+
+    # Attendre un court instant avant de cliquer sur le bouton "Post"
+
+
+
