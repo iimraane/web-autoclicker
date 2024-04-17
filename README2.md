@@ -1,8 +1,8 @@
-# Documentation du Projet "post_insta"
+# Documentation du Projet "post_insta_hater"
 
 ## Introduction
 
-Ce projet utilise Selenium pour automatiser les commentaires sur Instagram. Il fournit un moyen simple d'interagir avec les publications Instagram en postant des commentaires de manière automatisée.
+Ce projet vise à automatiser les commentaires sur Instagram en utilisant Selenium. Il fournit un moyen simple d'interagir avec les publications Instagram en postant des commentaires de manière automatisée.
 
 ## Installation
 
