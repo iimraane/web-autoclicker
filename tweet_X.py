@@ -24,11 +24,18 @@ driver.find_element(By.ID, "identifierNext").click()
 
 client = OpenAI(api_key="sk-proj-OEq74s8gIqNJwl7dkmQyT3BlbkFJBV7ivUpsgAJ8pYV89yaA")
 
-def generate_response(comment, tweet.text):
+def generate_response(comment, tweet):
     # Appel à l'API pour générer une réponse
     response = client.chat.completions.create(
       engine="gpt-3.5-turbo",
-      prompt=f"Voici un tweet, tu dois y repondre de facons a ajouter de la valeur a ton commentaire, la reponse ne peut pas exceder 280 caractere, la reponse a ce prompt dois UNIQUEMENT etre le commentaire, rien d'autre, voici le tweet: {tweet.text}"
+      messages=[
+          {
+          "role" : "user",
+          "content": f"Voici un tweet, tu dois y repondre de facons a ajouter de la valeur a ton commentaire, la reponse ne peut pas exceder 280 caractere, la reponse a ce prompt dois UNIQUEMENT etre le commentaire, rien d'autre, tu dois repondre dans la meme langue que le tweet, voici le tweet: {tweet}"
+          }
+        ],
+      temperature=1,
+      max_tokens=256
     )
     response = comment
     return comment
@@ -55,9 +62,9 @@ while True:
     tweet = tweet.text
 
     # Appelez la méthode de modération avec le texte du tweet
-    moderation = client.moderations.create(input=tweet.text)
+    moderation = client.moderations.create(input=tweet)
 
-    comment = generate_response(comment, tweet.text)
+    comment = generate_response(comment, tweet)
     number += 1 
     print(f"Reponse n*{number}: {comment}")
 
