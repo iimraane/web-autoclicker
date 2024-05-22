@@ -1,37 +1,38 @@
-# Post insta / hater
+# Nasdas cb
 
-1. A quoi servent les deux programmes ?
+Un script fait a l'occasion du drop de carte bleu le 16 juin 2024, servant a snipe ses storys pour identifier au plus vite les codes de cartes bleu
 
-Post insta, sert a commenter, automatiquement, un post instagram avec des caractères aleatoire
+Librairies/Dpendances : base64, requests, egalement besoins de creer un fichier sur le bureau nommé "Storys"
 
-Post insta hater, sert a commenter tout les post et reel d'un compte avec des commentaires negatifs choisit au préalable
+# Post Insta Hater
 
-2. Dependances
+Un script servant a publié en masse un compte instagram avec de mauvais commentaire pour lui pourrir la vie (hehe)
 
-- Selenium 'pip install Selenium'
-- Chrome webdriver 'https://chromedriver.chromium.org'
-- Python 3.6 'https://www.python.org/downloads/'
+Librairies/Dependances : Instagrapi, et le fichier "Post_insta_hater_com" (Present dans le repositorie)
 
-- Instabot.py 'pip install instabot'
-- Python 3.6 'https://www.python.org/downloads/'
+# Post Insta
 
-3. Documentation
+Un script fait a l'occasion du concours d'iphone de justriadh, servant a commenter en masse UN SEUL post instagram avec des caracteres aléatoires
 
-Voici la documentation de :
+Librairies/Dependances : Selenium
 
-- Selenium : https://selenium-python.readthedocs.io
-- Chrome Webdriver : https://www.selenium.dev/selenium/docs/api/py/webdriver_chrome/selenium.webdriver.chrome.webdriver.html
-- Instabot.py : https://instagrambot.github.io/docs/en/For_developers.html
-- Python : https://docs.python.org/3/
+# Post Tweet
 
-4. Contact
+Un script servant a un twitter inspirant de maniere automatiser
 
-Pour toute demande ou feedback, veuillez me contacter a [zeleo789789@gmail.com] ou [El_Titano] sur discord
+Librairies/Dependances : Selenium, OpenAi (et par consequent une clé d'api)
 
-5. Responsabilités
+# Tweet X
 
-Je ne suis en aucun cas responsable de ce que vous faite du script, veuillez les utiliser en prenant en compte les reglementations et limitations d'instagram
+Un script servant a repondre a des tweets en masse de maniere automatiser
 
-Des mises a jours arrive bientot..
+Librairies/Dependances : Selenium, OpenAi (et par consequent une clé d'api)
 
-El Titano
+# Installation des librairies
+
+``pip install "nom_de_la_librairie"``
+
+# Me contacter
+
+Si besoins, voici mon discord : El_Titano
+
