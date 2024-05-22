@@ -36,3 +36,6 @@ Librairies/Dependances : Selenium, OpenAi (et par consequent une clé d'api)
 
 Si besoins, voici mon discord : El_Titano
 
+# Infos supplementaires
+
+Tout les fichier non present dans cette "documentation" ne servent a rien ou ne sont plus a jours..
